@@ -1,0 +1,39 @@
+{
+  "apiVersion": "argoproj.io/v1alpha1",
+  "kind": "Application",
+  "metadata": {
+    "annotations": {},
+    "finalizers": [
+      "resources-finalizer.argocd.argoproj.io"
+    ],
+    "labels": {
+      "argocd.argoproj.io/instance": "apps.mon-dev-na1.us-west-2.sharedeks01"
+    },
+    "name": "prometheus-app-dmor",
+    "namespace": "argocd"
+  },
+  "spec": {
+    "destination": {
+      "namespace": "prometheus",
+      "server": "https://AB83BBC37916F4448EA455A333FE67DC.gr7.us-west-2.eks.amazonaws.com"
+    },
+    "project": "prometheus",
+    "source": {
+      "helm": {
+        "valueFiles": [
+          "values-dmor.yaml"
+        ],
+        "values": "awsAccountID: \"300101013673\"\n"
+      },
+      "path": "charts/mon-prometheus",
+      "repoURL": "https://github.com/inContact/acddevops-kubernetes-charts.git",
+      "targetRevision": "monitoring"
+    },
+    "syncPolicy": {
+      "automated": {
+        "prune": true,
+        "selfHeal": true
+      }
+    }
+  }
+}
