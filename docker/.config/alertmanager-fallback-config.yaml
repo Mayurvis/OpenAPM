@@ -7,15 +7,15 @@
 # receivers:
 #   - name: 'sns-notification'
 #     sns_configs:
-#       - topic_arn: 'arn:aws:sns:us-west-2:529347085383:testingemail'
+#       - topic_arn: 'arn:aws:sns:us-west-2::email'
 #         api_url: https://sns.us-west-2.amazonaws.com  
 #         # subject: 'tttt'
 #         # message: 'ffff'
 #         sigv4:
 #           region: 'us-west-2'
-#           access_key: 'AKIAXWP4LQRD4EA26UGL'
-#           secret_key: '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'
-#           profile: 'arn:aws:iam::529347085383:user/grafana'
+#           access_key: ''
+#           secret_key: ''
+#           profile: 'arn:aws:iam:::user/grafana'
 #           # [ role_arn: <string> ]
 #         attributes:
 #           key: 'somekey'
@@ -40,7 +40,7 @@ receivers:
   # In this example we're not going to send any notification out of Alertmanager.
   - name: 'webhook-receiver'
     webhook_configs:
-      - url: 'https://niceonline.webhook.office.com/webhookb2/47aff577-86f0-44e5-b411-236f60ea195e@7123dabd-0e87-4da9-9cb9-b7ec82011aad/IncomingWebhook/8bb082fd6f2a49cdaac5220bdd216087/5b3aa88d-b65b-4fdd-a543-b6124bfc98f8'
+      - url: 'https://webhook.com'
 
 # # Global settings
 # global:
